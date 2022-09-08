@@ -1,7 +1,7 @@
-import { Link } from 'next/link'
+import Link from 'next/link'
 
 function EventItem(props) {
-
+    console.log(props);
     const { title, date, image, location, id } = props;
 
     const humanreadeabledate = new Date(date).toLocaleDateString('en-US', {
@@ -12,8 +12,6 @@ function EventItem(props) {
 
     const formattedAddress = location.replace(', ', '\n')
     const exploreLink = `/events/${id}`
-
-
     return (
         <li>
             <img src={'/' + image} alt={title} />
